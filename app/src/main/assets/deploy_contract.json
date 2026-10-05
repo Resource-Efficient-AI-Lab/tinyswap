@@ -1,0 +1,160 @@
+{
+  "output_order": [
+    "enc0_dw",
+    "enc1_dw",
+    "enc2_dw",
+    "enc3_dw",
+    "enc4_dw",
+    "dec0_dw",
+    "dec1_dw",
+    "dec2_dw",
+    "dec3_dw",
+    "enc0_pw",
+    "enc1_pw",
+    "enc2_pw",
+    "enc3_pw",
+    "enc4_pw",
+    "dec0_pw",
+    "dec1_pw",
+    "dec2_pw",
+    "dec3_pw"
+  ],
+  "shapes": {
+    "enc0_dw": [
+      1,
+      3,
+      4,
+      4
+    ],
+    "enc1_dw": [
+      1,
+      32,
+      4,
+      4
+    ],
+    "enc2_dw": [
+      1,
+      64,
+      4,
+      4
+    ],
+    "enc3_dw": [
+      1,
+      128,
+      4,
+      4
+    ],
+    "enc4_dw": [
+      1,
+      256,
+      4,
+      4
+    ],
+    "dec0_dw": [
+      1,
+      512,
+      3,
+      3
+    ],
+    "dec1_dw": [
+      1,
+      512,
+      3,
+      3
+    ],
+    "dec2_dw": [
+      1,
+      256,
+      3,
+      3
+    ],
+    "dec3_dw": [
+      1,
+      128,
+      3,
+      3
+    ],
+    "enc0_pw": [
+      32,
+      3,
+      1,
+      1
+    ],
+    "enc1_pw": [
+      64,
+      32,
+      1,
+      1
+    ],
+    "enc2_pw": [
+      128,
+      64,
+      1,
+      1
+    ],
+    "enc3_pw": [
+      256,
+      128,
+      1,
+      1
+    ],
+    "enc4_pw": [
+      512,
+      256,
+      1,
+      1
+    ],
+    "dec0_pw": [
+      256,
+      512,
+      1,
+      1
+    ],
+    "dec1_pw": [
+      128,
+      512,
+      1,
+      1
+    ],
+    "dec2_pw": [
+      64,
+      256,
+      1,
+      1
+    ],
+    "dec3_pw": [
+      32,
+      128,
+      1,
+      1
+    ]
+  },
+  "idn_initializer_map": {
+    "enc0_dw": "idn_enc0_dw_weight",
+    "enc1_dw": "idn_enc1_dw_weight",
+    "enc2_dw": "idn_enc2_dw_weight",
+    "enc3_dw": "idn_enc3_dw_weight",
+    "enc4_dw": "idn_enc4_dw_weight",
+    "dec0_dw": "idn_dec0_dw_weight",
+    "dec1_dw": "idn_dec1_dw_weight",
+    "dec2_dw": "idn_dec2_dw_weight",
+    "dec3_dw": "idn_dec3_dw_weight",
+    "enc0_pw": "idn_enc0_pw_weight",
+    "enc1_pw": "idn_enc1_pw_weight",
+    "enc2_pw": "idn_enc2_pw_weight",
+    "enc3_pw": "idn_enc3_pw_weight",
+    "enc4_pw": "idn_enc4_pw_weight",
+    "dec0_pw": "idn_dec0_pw_weight",
+    "dec1_pw": "idn_dec1_pw_weight",
+    "dec2_pw": "idn_dec2_pw_weight",
+    "dec3_pw": "idn_dec3_pw_weight"
+  },
+  "note": "addInitializer: IIM\u8f93\u51faiim_{canon} -> \u8986\u76d6IDN\u7684idn_{canon}_weight; dw\u9700reshape (1,C,k,k)->(C,1,k,k),\u5185\u5b58\u5e8f\u4e0d\u53d8,\u7eafreshape\u65e0transpose",
+  "injection_mechanism": "bytes_patch",
+  "preprocess_recipe": {
+    "channel_order": "RGB",
+    "scale": "1/255",
+    "layout": "NCHW",
+    "arcface_extra": "imagenet mean/std"
+  }
+}

@@ -1,0 +1,28 @@
+# Gradle / build output
+.gradle/
+build/
+.kotlin/
+.cxx/
+captures/
+*.apk
+*.aab
+
+# IDE / machine-specific
+.idea/
+*.iml
+local.properties
+.DS_Store
+
+# Vendored OpenCV Android SDK (OpenCV comes from Maven Central instead)
+/sdk/
+
+# Model weights: distributed separately (see README "Models")
+*.onnx
+
+# Demo media and on-device verification tensors: not redistributable / regenerated
+*.bin
+app/src/main/assets/*.jpg
+app/src/main/assets/*.jpeg
+app/src/main/assets/*.png
+app/src/main/assets/*.mp4
+app/src/main/assets/verify/*.png
